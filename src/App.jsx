@@ -30,7 +30,7 @@ function App() {
 
     try {
       if (searchTerm === "") {
-        setError("Please enter a search term");
+        setError("Please Enter a Movie Name");
         setMovieList([]);
         return;
       }
@@ -66,8 +66,13 @@ function App() {
 
   return (
     <div className="bg-[#141414] min-h-screen text-white p-10 ">
-      <h1 className="text-[#E50914] text-2xl">FILMFINDER</h1>
-      <SearchBar 
+      <div className="flex gap-2">
+<h1 className="text-[#E50914] text-2xl">FILMFINDER </h1>
+      <img className="h-8 w-8" src="/movie-search-app/favicon.svg" alt="FilmFinder logo" />
+
+      </div>
+      
+      <SearchBar
         keyword={searchTerm}
         onChange={handleEventChange}
         onSearch={handleSearch}
