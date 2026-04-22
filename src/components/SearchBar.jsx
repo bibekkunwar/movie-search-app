@@ -7,7 +7,8 @@ function SearchBar({keyword, onChange, onSearch}) {
     }
 
     return (
-        <div className="flex gap-6 m-6">
+        <div>
+        <div className="flex gap-6 m-6 text-center justify-center">
             <input className="bg-gray-600 text-white p-2 border-2 rounded-xl"
             type="text"
             placeholder="Enter a movie to Search"
@@ -17,6 +18,7 @@ function SearchBar({keyword, onChange, onSearch}) {
             />
             <button className="text-white bg-[#E50914] px-6 py-2 rounded-lg" 
                 onClick={onSearch}> Search</button>
+        </div>
         </div>
     )
 }

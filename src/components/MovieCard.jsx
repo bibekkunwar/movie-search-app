@@ -1,14 +1,15 @@
-function MovieCard({ title, poster_path, modalHandler, overview }) {
+function MovieCard({ modalHandler, movie }) {
 
     return (
-        <div onClick={() => modalHandler({ title, poster_path, overview })} className="shrink-0 w-36 bg-[#222] rounded-xl">
+        <div onClick={() => modalHandler( movie )} className="shrink-0 w-36 bg-[#222] rounded-xl">
             
-            <img className="w-full"
-              src={`https://image.tmdb.org/t/p/w200${poster_path}`}
-              alt={title}
+          {movie.poster_path ?   <img className="w-full"
+              src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
+              alt={movie.title}
             />
-            <h2 className="px-2 py-1 text-sm">{title}</h2>
-            {/* <p>{overview}</p> */}
+        :
+        <p>No Image Available</p> }
+            <h2 className="px-2 py-1 text-sm">{movie.title}</h2>
         </div>
     )
 }
